@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Bucket: {{ bucket_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <a href="{{ url_for('index') }}">Back to Buckets</a>
+  <h1>Bucket: {{ bucket_name }}</h1>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="alert {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endwith %}
+
+  <h2>Upload File</h2>
+  <form action="{{ url_for('upload_file', bucket_name=bucket_name) }}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <input type="text" name="key" placeholder="Optional: specify path/key">
+    <button type="submit">Upload</button>
+  </form>
+
+  <h2>Create Folder</h2>
+  <form action="{{ url_for('create_folder', bucket_name=bucket_name) }}" method="post">
+    <input type="text" name="folder_name" placeholder="Folder Name" required>
+    <button type="submit">Create</button>
+  </form>
+
+  <h2>Copy/Move File</h2>
+  <form action="{{ url_for('copy_move_file', bucket_name=bucket_name) }}" method="post">
+    <input type="text" name="source_key" placeholder="Source Key" required>
+    <input type="text" name="destination_key" placeholder="Destination Key" required>
+    <select name="operation" required>
+      <option value="copy">Copy</option>
+      <option value="move">Move</option>
+    </select>
+    <button type="submit">Execute</button>
+  </form>
+
+  <h2>Files/Folders</h2>
+  <ul>
+    {% for obj in objects %}
+      <li>
+        {{ obj.Key }}
+        <form action="{{ url_for('delete_file', bucket_name=bucket_name, key=obj.Key) }}" method="post" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
