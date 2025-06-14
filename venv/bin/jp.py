@@ -1,4 +1,4 @@
-#!/home/prithvi/Downloads/Python-Assignment-main/venv/bin/python3
+#!/home/prithvi/Assignments/Python-Assignment-main/venv/bin/python3
 
 import sys
 import json

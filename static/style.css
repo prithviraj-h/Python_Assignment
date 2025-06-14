@@ -1,32 +1,286 @@
+/* General Body and Typography */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #eef2f7; /* Lighter background for a softer feel */
+    color: #333;
+    line-height: 1.6; /* Slightly increased for better readability */
+    padding: 12px; /* Slightly reduced body padding for less whitespace */
+    font-size: 15px; /* Base font size for better readability on various screens */
 }
 
 h1, h2 {
-    color: #333;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 10px; /* Further reduced margin */
+    font-weight: 600;
+    line-height: 1.2; /* Tighter line height for headings */
 }
 
+h1 {
+    font-size: 2.1em; /* Adjusted H1 size */
+}
+
+h2 {
+    font-size: 1.4em; /* Adjusted H2 size */
+}
+
+a {
+    text-decoration: none;
+    color: #2980b9;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #3498db;
+}
+
+/* Forms - General Styling */
 form {
-    margin-bottom: 20px;
+    margin-bottom: 18px; /* Slightly reduced margin */
+    background: #ffffff;
+    padding: 16px; /* Slightly reduced padding */
+    border-radius: 7px; /* Slightly less rounded */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07); /* Softer shadow */
+}
+
+input[type="text"],
+input[type="file"],
+select {
+    padding: 8px 10px; /* Slightly reduced padding */
+    margin-right: 6px; /* Reduced margin */
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 0.9em; /* Adjusted font size for inputs */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
 }
 
 button {
-    margin-left: 10px;
+    padding: 8px 15px; /* Slightly reduced padding */
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em; /* Adjusted font size for buttons */
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Specific button styles */
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Alerts */
 .alert {
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+    padding: 10px 16px; /* Adjusted padding */
+    margin: 10px 0; /* Adjusted margin */
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.95em; /* Slightly larger font for better visibility */
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .alert.success {
     background-color: #d4edda;
     color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
 .alert.danger {
     background-color: #f8d7da;
     color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* List Styles (Files and Folders) */
+.file-list, .bucket-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    gap: 7px; /* Further reduced gap between list items */
+}
+
+.file-list li, .bucket-list li {
+    background: #ffffff;
+    padding: 10px 15px; /* Reduced padding for a more compact look */
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06); /* Even softer shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em; /* Adjusted font size for list items */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.file-list li:hover, .bucket-list li:hover {
+    transform: translateY(-1px); /* More subtle lift on hover */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Softer hover shadow */
+    background: #fcfdfe;
+}
+
+/* Layout Specifics for index.html */
+.container {
+    max-width: 850px; /* Slightly reduced max-width for tighter content */
+    margin: 12px auto; /* Reduced margin */
+    padding: 18px; /* Reduced padding */
+    background: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+.header {
+    margin-bottom: 20px; /* Reduced margin */
+    text-align: center;
+    padding-bottom: 12px; /* Reduced padding */
+    border-bottom: 1px solid #eee;
+}
+
+.header h1 {
+    font-size: 2.1em; /* Consistent H1 size */
+}
+
+.section {
+    background: #fff;
+    border-radius: 7px;
+    padding: 18px; /* Reduced padding */
+    margin-bottom: 18px; /* Reduced margin */
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.03); /* Very soft shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Softer hover shadow */
+}
+
+.form-inline {
+    display: flex;
+    gap: 8px; /* Further reduced gap */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-inline input[type="text"] {
+    flex: 1;
+    min-width: 160px; /* Slightly reduced min-width */
+}
+
+/* list_bucket.html specific styles */
+.file-list li span, .file-list li a {
+    flex-grow: 1;
+}
+
+.file-list li form {
+    margin-bottom: 0;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.file-list li button, .bucket-list li button {
+    margin-left: 8px; /* Reduced margin */
+    flex-shrink: 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 8px; /* Reduced margin */
+    font-size: 0.85em; /* Slightly smaller back link */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+        font-size: 14px; /* Base font slightly smaller on mobile */
+    }
+    .container {
+        margin: 8px auto;
+        padding: 12px;
+    }
+    .header h1 {
+        font-size: 1.7em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    input[type="text"],
+    input[type="file"],
+    select,
+    button {
+        font-size: 0.85em; /* Inputs/buttons slightly smaller */
+        padding: 7px 12px;
+    }
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+    .form-inline input[type="text"],
+    .form-inline input[type="file"],
+    .form-inline select,
+    .form-inline button {
+        width: 100%;
+        margin-right: 0;
+    }
+    .bucket-list li, .file-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 0.9em; /* List items still readable */
+        padding: 8px 12px;
+    }
+    .bucket-list li form, .file-list li form {
+        width: 100%;
+        text-align: right;
+    }
+    .bucket-list li button, .file-list li button {
+        margin-left: 0;
+        width: 100%;
+    }
+    .alert {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.4em;
+    }
+    h2 {
+        font-size: 1.1em;
+    }
+    .section {
+        padding: 10px;
+    }
+    .alert {
+        font-size: 0.8em;
+    }
 }
